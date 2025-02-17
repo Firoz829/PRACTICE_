@@ -1,0 +1,57 @@
+body {
+  background-color: rgb(240, 240, 141);
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  background-color: rgb(206, 170, 144);
+  width: 20%;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+label,
+input,
+a {
+  display: block;
+  margin-top: 7px;
+  text-decoration: none;
+}
+
+button {
+  margin-top: 7px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+}
+
+#but {
+  display: flex;
+  justify-content: space-between;
+}
+
+#TD {
+  background-color: green;
+  color: gold;
+}
+
+#BT {
+  background-color: red;
+  color: gold;
+}
+
+#CD {
+  background-color: blanchedalmond;
+}
+#CD::placeholder {
+  color: rgb(122, 142, 224);
+}

@@ -1,0 +1,28 @@
+body {
+  background-color: azure;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+}
+
+form {
+  background-color: burlywood;
+  padding: 20px;
+  color: white;
+  width: 30%;
+}
+
+label,
+input,
+button,
+select,
+textarea {
+  margin-bottom: 10px;
+}
+
+.imp {
+  width: 100%;
+}

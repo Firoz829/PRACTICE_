@@ -1,0 +1,23 @@
+a {
+  font-size: 30px;
+}
+ul {
+  list-style-type: none;
+}
+#l {
+  color: red;
+}
+body {
+  background-image: linear-gradient(red, blue);
+  height: 100vh;
+}
+img {
+  height: 400px;
+  width: 400px;
+  border-radius: 100%;
+}
+img:hover {
+  transition: 180s;
+  transform: rotate(36000deg);
+  box-shadow: 20px 20px 20px burlywood;
+}

@@ -1,0 +1,14 @@
+#BC {
+  color: blue;
+}
+#AB {
+  color: yellow;
+}
+ul {
+  list-style-type: lower-greek;
+}
+body {
+  background-image: linear-gradient(red, yellow, blue);
+
+  /* background-repeat:round; */
+}
