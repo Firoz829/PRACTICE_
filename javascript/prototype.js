@@ -26,7 +26,7 @@ const shafique = {
 
 firoz.__proto__ = employee;
 shafique.prototype = employee;
-altamash.__proto__ = employee;  
+altamash.__proto__ = employee;
 
 // Adding a method to the prototype
 function Person(name, age) {
@@ -55,3 +55,5 @@ dog.bark = function () {
 
 dog.makeSound(); // Output: Some generic animal sound
 dog.bark(); // Output: Woof! Woof!
+
+// git testing comment
