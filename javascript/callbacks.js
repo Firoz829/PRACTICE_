@@ -1,3 +1,23 @@
+// callback
+
+// function sum(a, b) {
+//   console.log(a + b);
+// }
+
+// function calc(a, b, sumCallback) {
+//   sumCallback(a, b);
+// }
+
+// calc(1, 2, sum); // 3  ye hota hai sync callback
+
+// async callback
+// function hello() {
+//   console.log("Hello");
+// }
+
+// setTimeout(hello, 3000);// ye ek async function hai jo 3 sec bad prinit honga
+
+// call back hell
 // function getData(dataID, getNextData) {
 //   setTimeout(() => {
 //     console.log("data", dataID);
@@ -133,20 +153,20 @@
 
 // get data function use kar ke dekhte hai
 
-function getData(dataId) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("data", dataId);
-      resolve("success");
-    }, 3000);
-  });
-}
+// function getData(dataId) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("data", dataId);
+//       resolve("success");
+//     }, 3000);
+//   });
+// }
 
-// ab is ko call karneke liye async method banana padhe ga jis me await use kar sakte hai
+// // ab is ko call karneke liye async method banana padhe ga jis me await use kar sakte hai
 
-async function geAlldata() {
-  await getData(1);
-  await getData(2); // ye wait kare ga 1 ka
-  await getData(3); /// sab aaise h wait kare ge
-  await getData(4);
-}
+// async function geAlldata() {
+//   await getData(1);
+//   await getData(2); // ye wait kare ga 1 ka
+//   await getData(3); /// sab aaise h wait kare ge
+//   await getData(4);
+// }
