@@ -2,13 +2,14 @@ import RestaurantCard from "./Restaurantcard";
 import reslist from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  console.log("body");
+  // console.log("body");
 
   useEffect(() => {
     fetchData();
@@ -20,10 +21,10 @@ const Body = () => {
     );
     const json = await data.json();
 
-    console.log(json);
-    console.log(
-      json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
-    );
+    //console.log(json);
+    // console.log(
+    //   json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+    // );
     setListOfRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -45,7 +46,7 @@ const Body = () => {
           <input
             type="text"
             className="search-nox"
-            placeholder="Search your Restaurant..."
+            placeholder="Search your Restaurant & Dish..."
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
@@ -62,7 +63,7 @@ const Body = () => {
               });
 
               setFilteredRestaurant(searchdata);
-              console.log("hello" + searchText);
+              // console.log("hello" + searchText);
             }}
           >
             Search
@@ -82,10 +83,15 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
-      {console.log(filteredRestaurant)}
+      {/* {console.log(filteredRestaurant)} */}
     </div>
   );
 };

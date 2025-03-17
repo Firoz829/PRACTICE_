@@ -176,3 +176,20 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.newmenuinfo {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menucont {
+  margin: 20px;
+  overflow: hidden;
+}
+.imgmenu {
+  margin-left: 40px;
+  overflow: hidden;
+}
+.newmenuinfo {
+  margin: 10px;
+}
