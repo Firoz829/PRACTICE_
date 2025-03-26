@@ -1,47 +1,55 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("login");
 
   useEffect(() => {
-    console.log("useEffects");
+    // console.log("useEffects");
   }, [btnName]);
 
   const onlinestatus = useOnlineStatus();
+
+  const { isLoggedUser } = useContext(UserContext);
+  console.log(isLoggedUser);
+
   return (
-    <div className="header">
+    <div className="header flex items-center justify-between border-2 border-black rounded-xl bg-white shadow-[0px_0px_5px_5px_#6e6a6a70]">
       <div className="logo-container">
         <Link to="/">
-          <img className="logo" alt="logo" src={LOGO_URL} />
+          <img className="logo w-[100px] ml-[50px]" alt="logo" src={LOGO_URL} />
         </Link>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>Online status{onlinestatus ? "✅" : "🔴"}</li>
-          <li>
+      <div className="nav-items text-[17px]">
+        <ul className="flex items-center pr-[100px]">
+          <li className="list-none mx-2.5 cursor-pointer text-[#2e2a2a] hover:underline hover:text-black">
+            Online status{onlinestatus ? "✅" : "🔴"}
+          </li>
+          <li className="list-none mx-2.5 cursor-pointer text-[#2e2a2a] hover:underline hover:text-black">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="list-none mx-2.5 cursor-pointer text-[#2e2a2a] hover:underline hover:text-black">
             <a href="/about">About Us</a>
           </li>
-          <li>
+          <li className="list-none mx-2.5 cursor-pointer text-[#2e2a2a] hover:underline hover:text-black">
             <Link to="/contact">Contact Us </Link>
           </li>
-          <li>
+          <li className="list-none mx-2.5 cursor-pointer text-[#2e2a2a] hover:underline hover:text-black">
             <Link to="/grocery">Grocery </Link>
           </li>
-          <li>Cart</li>
-          <li>
+          <li className="list-none mx-2.5 cursor-pointer text-[#2e2a2a] hover:underline hover:text-black">
+            Cart
+          </li>
+          <li className="list-none mx-2.5 cursor-pointer text-[#2e2a2a] hover:underline hover:text-black">
             <button
-              className="btn"
+              className="btn bg-green-600 text-white px-2.5 py-3.5 text-[0.95rem] text font-semibold rounded-xl border-0 cursor-pointer"
               onClick={() => {
                 btnName === "login"
-                  ? setBtnName("logout")
-                  : setBtnName("login");
+                  ? setBtnName(isLoggedUser)
+                  : setBtnName(isLoggedUser);
               }}
             >
               {btnName}

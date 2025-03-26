@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useContext, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -7,14 +7,28 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Error from "./Components/Error";
 import Contact from "./Components/Contact";
 import RestaurantMenuCard from "./Components/RestaurantMenuCard";
+import UserContext from "./utils/UserContext";
 // import Grocery from "./Components/Grocery";
 
 const AppLayout = () => {
+  const [loggedinInfo, setLoggedinInfo] = useState();
+
+  useEffect(() => {
+    const newData = {
+      name: "Firoz shaikh",
+    };
+    setLoggedinInfo(newData.name);
+  }, []);
+
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider
+      value={{ isLoggedUser: loggedinInfo, setLoggedinInfo }}
+    >
+      <div className="app font-poppins font-semibold bg-white">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 
