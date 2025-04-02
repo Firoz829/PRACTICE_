@@ -8,6 +8,8 @@ import Error from "./Components/Error";
 import Contact from "./Components/Contact";
 import RestaurantMenuCard from "./Components/RestaurantMenuCard";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 // import Grocery from "./Components/Grocery";
 
 const AppLayout = () => {
@@ -21,14 +23,16 @@ const AppLayout = () => {
   }, []);
 
   return (
-    <UserContext.Provider
-      value={{ isLoggedUser: loggedinInfo, setLoggedinInfo }}
-    >
-      <div className="app font-poppins font-semibold bg-white">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider
+        value={{ isLoggedUser: loggedinInfo, setLoggedinInfo }}
+      >
+        <div className="app font-poppins font-semibold bg-white">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 

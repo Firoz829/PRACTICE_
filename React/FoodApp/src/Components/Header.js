@@ -3,6 +3,7 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("login");
@@ -14,8 +15,14 @@ const Header = () => {
   const onlinestatus = useOnlineStatus();
 
   const { isLoggedUser } = useContext(UserContext);
-  console.log(isLoggedUser);
+  // console.log(isLoggedUser);
 
+  // subscribing to the store using a selecter
+  const cartItems = useSelector((store) => {
+    return store.cart.items;
+  });
+
+  console.log(cartItems);
   return (
     <div className="header flex items-center justify-between border-2 border-black rounded-xl bg-white shadow-[0px_0px_5px_5px_#6e6a6a70]">
       <div className="logo-container">
@@ -40,8 +47,8 @@ const Header = () => {
           <li className="list-none mx-2.5 cursor-pointer text-[#2e2a2a] hover:underline hover:text-black">
             <Link to="/grocery">Grocery </Link>
           </li>
-          <li className="list-none mx-2.5 cursor-pointer text-[#2e2a2a] hover:underline hover:text-black">
-            Cart
+          <li className="list-none mx-2.5 cursor-pointer text-[#2e2a2a] hover:underline hover:text-black ">
+            Cart - {cartItems?.length || 0}
           </li>
           <li className="list-none mx-2.5 cursor-pointer text-[#2e2a2a] hover:underline hover:text-black">
             <button

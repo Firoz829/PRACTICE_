@@ -21,16 +21,16 @@ const ItemList = ({ items }) => {
             </div>
             <p className="text-xs">{item.card.info.description}</p>
           </div>
-          <div className="w-3/12 p-4">
-            <div className="absolute">
-              <button className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg">
+          <div className="w-3/12 p-4 relative">
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/12">
+              <button className="p-2 rounded-lg bg-white text-black shadow-lg">
                 Add +
               </button>
             </div>
             <img
               src={CDN_URL + item.card.info.imageId}
-              className="w-full"
-            ></img>
+              className="w-full rounded-lg"
+            />
           </div>
         </div>
       ))}
