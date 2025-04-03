@@ -48,7 +48,7 @@ const Header = () => {
             <Link to="/grocery">Grocery </Link>
           </li>
           <li className="list-none mx-2.5 cursor-pointer text-[#2e2a2a] hover:underline hover:text-black ">
-            Cart - {cartItems?.length || 0}
+            <Link to="/cart">Cart - {cartItems?.length || 0}</Link>
           </li>
           <li className="list-none mx-2.5 cursor-pointer text-[#2e2a2a] hover:underline hover:text-black">
             <button
