@@ -13,7 +13,7 @@
 - integration testing
 - End to End testing - e2e testing
 
-# Setting up Testing in our App
+# Setting up Testing in our react-App for unit testing
 
 - Install React Testing Library
 - Install jest

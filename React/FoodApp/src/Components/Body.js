@@ -86,6 +86,7 @@ const Body = () => {
           <input
             id="username"
             className="search-box"
+            placeholder="username"
             type="text"
             value={isLoggedUser}
             onChange={(e) => {

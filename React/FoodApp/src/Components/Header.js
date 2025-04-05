@@ -22,7 +22,7 @@ const Header = () => {
     return store.cart.items;
   });
 
-  console.log(cartItems);
+  // console.log(cartItems);
   return (
     <div className="header flex items-center justify-between border-2 border-black rounded-xl bg-white shadow-[0px_0px_5px_5px_#6e6a6a70]">
       <div className="logo-container">
@@ -56,7 +56,7 @@ const Header = () => {
               onClick={() => {
                 btnName === "login"
                   ? setBtnName(isLoggedUser)
-                  : setBtnName(isLoggedUser);
+                  : setBtnName("login");
               }}
             >
               {btnName}
